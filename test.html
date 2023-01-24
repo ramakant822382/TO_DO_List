@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO_DO_List</title>
+    <!-- link css file here -->
     <link rel="stylesheet" href="/test.css" />
   </head>
   <body>
@@ -23,14 +24,16 @@
     </main>
 
     <script>
+      // Declear all selector here in varriable
       var myform = document.getElementById("myform");
       var myinput = document.getElementById("myinput");
       var myitem = document.getElementById("myitem");
-
+// event lisner ,event- submit
       myform.addEventListener("submit", function (event) {
         event.preventDefault();
         createItem(myinput.value);
       });
+      // create item function
 
       function createItem(inputItems) {
         var items = `<li>${inputItems}<button onclick="deleteElement(this) ">Delete</button> </li>`;
@@ -38,7 +41,7 @@
         myinput.value = "";
         myinput.focus();
       }
-
+// delete function
       function deleteElement(ElementToDelete) {
         ElementToDelete.parentElement.remove();
       }
